@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenJT</title>
+    <link rel="stylesheet" href="./pretty/openjt.css" />
+    <link rel="icon" href="./pretty/img/焦糖logo2.png" type="gif/image" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav>
+      <div class="a-box">
+        <img id="clickOne" src="./pretty/img/焦糖logo3.png" />
+      </div>
+      <div class="a-box">
+        <a class="nav-a" id="clickTwo">Open JT</a>
+        <div class="content">
+          <p style="font-family: 楷体; font-size: 17px">
+            OpenJT是焦糖工作室的几位少年成立的AI初创公司。<br />致力于打造蓝星最强人工智能，希望推动人工智能的健康发展，使其能够更好地服务于人类的未来。<br />
+            创立于2024年9月23日，总部位于中国-四川-成都。
+          </p>
+          <!-- <p style="font-size: 22px">
+            ——开启智能创作的新纪元，让灵感随时绽放!——
+          </p> -->
+        </div>
+      </div>
+      <div class="blur"></div>
+      <div class="a-box">
+        <a class="nav-a clickThree"> 项目 </a>
+        <div class="content">
+          <div class="shit">
+            <p class="span clickThree">Anotherme</p>
+            <p class="describe">
+              ||他方真我||一个基于训练变换器模型的语言交流系统，能迅速了解用户心声，成为你的知己，提供信息检索和各种情感支持。
+            </p>
+            <p class="span clickFour">Qibaishi</p>
+            <p class="describe">
+              ||齐白石||
+              图像生成模型，可以根据文本描述生成图像，尤其精通国画，支持创造性和艺术性的表达。
+            </p>
+            <p class="span clickFive">Godedit</p>
+            <p class="describe">
+              ||上帝之译||一个杰出编程系统，能够理解和生成代码，支持多种编程语言，功能十分强大。
+            </p>
+            <p class="span clickSix">Musae</p>
+            <p class="describe">
+              || 缪斯 ||
+              文艺创作模型，集电影、音乐、诗歌等艺术创作功能于一身，为你提供更广泛多元的灵感来源。
+            </p>
+            <p id="zhengqi" style="font-size: 18px; font-family: 白纸">
+              To be continued...
+            </p>
+            <!-- <p class="span clickSix">Jotang API</p>
+            <p class="describe">
+              提供开发者和企业使用OpenAI模型的接口，支持多种应用场景，如文本生成、翻译、摘要等。
+            </p> -->
+          </div>
+        </div>
+      </div>
+      <div class="blur"></div>
+      <div class="a-box">
+        <a class="nav-a"> 功能 </a>
+        <div class="content">
+          <table class="fun-table">
+            <tbody>
+              <tr>
+                <td><p>文本或对话交流</p></td>
+                <td><p>图像生成模型</p></td>
+              </tr>
+              <tr>
+                <td><p>计算机视觉</p></td>
+                <td><p>自动化编程</p></td>
+              </tr>
+              <tr>
+                <td><p>自然语言处理</p></td>
+                <td><p>政策倡导与研究</p></td>
+              </tr>
+              <tr>
+                <td><p>安全与伦理性研究</p></td>
+                <td>
+                  <a href="https://www.zhenai.com/" target="_blank">
+                    <p>大数据婚恋媒介</p>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="blur"></div>
+      <div class="a-box">
+        <a class="nav-a">研发团队</a>
+        <div class="content">
+          <p>焦糖工作室 !</p>
+          <p>来自电子科技大学信息与软件工程学院，一个超级温暖有爱的工作室。</p>
+          <p>
+            关于焦糖这个名字，学长学姐们曾在官网中如是说:<br />"创始人一个爱吃焦糖布丁一个爱喝焦糖玛奇朵，于是在一场轰轰烈烈跨世纪大战之后，神魔二界（？）各退一步，取名为焦糖工作室"
+          </p>
+          <br />
+          <p>欢迎加入焦糖小窝</p>
+          <p class="jotang">Email&emsp; &emsp;&emsp; admin@jotang.club</p>
+          <p class="jotang">QQ群&emsp;&emsp; &emsp; 601398901</p>
+          <p class="jotang">Address&emsp;&emsp;&nbsp;沙河校区三教507A</p>
+          <a id="jotang" href="https://d.jotang.club/" target="_blank">
+            ——焦糖工作室论坛——
+          </a>
+        </div>
+      </div>
+      <div class="blur"></div>
+    </nav>
+    <!-- 轮播图 -->
+    <div class="shell">
+      <div class="img-continer">
+        <div class="photo"></div>
+        <div class="photo"></div>
+        <div class="photo"></div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="button">
+      <div class="change" id="left"></div>
+      <div class="change" id="right"></div>
+    </div>
+    <!-- 页面主体 -->
+    <div class="text-continer"><h1 class="symbol">"OpenJT"</h1></div>
+    <!-- 正式介绍 -->
+    <div class="main-continer">
+      <div class="box jotang">
+        <div class="pre text-l">
+          <p>
+            <!-- 我们的使命是创建可靠且具有人性化的人工智能，让技术成为推动生活质量提升的助力。我们相信，人工智能可以助力每一个梦想的实现。无论是提高工作效率，还是激发创造力，我们都致力于让人工智能触及生活的每一个角落 -->
+          </p>
+        </div>
+        <div class="pre img">
+          <img class="logo3" src="./pretty/img/焦糖logo3.png" />
+        </div>
+        <div class="pre text-r"></div>
+        <div class="pre text">
+          <!-- color: rgb(228, 106, 23) -->
+          <!-- color: rgb(34, 34, 34) -->
+          <h1
+            style="
+              font-family: 钟鸣;
+              font-size: 32px;
+              color: rgb(239, 235, 232);
+              text-shadow: 0 1px 1px rgba(81, 81, 81, 0.334);
+            "
+          >
+            开启智能创作的新纪元，让灵感随时绽放!
+          </h1>
+        </div>
+      </div>
+      <!-- 他方真我 -->
+      <div class="box Anotherme">
+        <div class="Text">
+          <div class="label">
+            <div class="filllabel clickThree"></div>
+            <div class="filllabel clickFour"></div>
+            <div class="filllabel clickFive"></div>
+            <div class="filllabel clickSix"></div>
+          </div>
+          <h2 class="h one">Anotherme</h2>
+          <h2 class="h two">"他方真我"</h2>
+          <p class="word one">~更懂你的对话交流模型</p>
+          <p class="word two">、灵魂深处的共鸣、</p>
+        </div>
+        <div class="float"></div>
+      </div>
+      <!-- 齐白石 -->
+      <div class="box Qibaishi">
+        <div class="float"></div>
+        <div class="Text">
+          <div class="label">
+            <div class="filllabel clickThree"></div>
+            <div class="filllabel clickFour"></div>
+            <div class="filllabel clickFive"></div>
+            <div class="filllabel clickSix"></div>
+          </div>
+          <div style="width: 320px; height: 100%; float: left">
+            <h2>Qibaishi—"齐白石"</h2>
+            <p>
+              齐白石先生是中国现代国画的杰出代表。<br />他将淳朴的民间艺术的风格与传统的文人画相结合，更新了文人画的艺术境界，达到了中国近现代花鸟画的最高峰。
+            </p>
+            <p>"Qibaishi"命名致敬了齐老，该项目生成的作品具有浓厚国画写意风</p>
+            <br />
+            <br />
+            <p class="word">更快、更高效</p>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 50px;
+              height: 400px;
+            "
+          >
+            <p class="word" style="color: rgb(183, 76, 76); margin-left: -50px">
+              释放思维,让创意飞、
+            </p>
+            <p
+              class="word"
+              style="
+                color: rgb(105, 146, 180);
+                margin-right: 100px;
+                font-size: 56px;
+              "
+            >
+              -花鸟风月-
+            </p>
+            <p
+              class="word"
+              style="
+                margin-left: 10px;
+                color: rgba(197, 112, 21, 0.573);
+                font-size: 58px;
+                margin-left: 140px;
+              "
+            >
+              国风意境
+            </p>
+            <p
+              class="word"
+              style="text-align: center; color: rgb(30, 100, 30); margin: 0"
+            >
+              水墨江山
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 上帝之译 -->
+      <div class="box Godedit">
+        <div class="Text">
+          <div class="label">
+            <div class="filllabel clickThree"></div>
+            <div class="filllabel clickFour"></div>
+            <div class="filllabel clickFive"></div>
+            <div class="filllabel clickSix"></div>
+          </div>
+          <h2>Godedit—"上帝之译"</h2>
+          <p>
+            Godedit团队里聚集了无数对于代码和编程感到狂热的天才，在他们的心中一直存在着一位CeyberGod，他拥有无穷的创造能力，能完成任何堪称神迹的项目。经历了数年开发，这位神终于在程序代码搭建起的圣坛里重铸身躯，回应了信徒们的召唤。
+          </p>
+          <p class="word">
+            在编程的世界里，Godedit展现了非凡的能力,不仅能够理解多种编程语言，还能生成高效、优雅的代码，帮助开发者解决复杂问题或提供灵感创意。
+          </p>
+          <p class="word">
+            无论是初学者还是资深工程师，Godedit都能为他们提供有价值的支持。我们的目标是将编程变得更加简单和高效，让每一个有梦想的人都能通过技术实现自己的构想。
+          </p>
+          <img src="./pretty/img/code.png" />
+          <p
+            style="
+              font-family: 传说;
+              font-size: 14px;
+              position: absolute;
+              bottom: -7px;
+              color: rgb(87, 86, 86);
+            "
+          >
+            "本网站源码由Godedit生成"
+          </p>
+        </div>
+        <div class="float"></div>
+      </div>
+      <!-- 缪斯 -->
+      <div class="box Musae">
+        <div class="float"></div>
+        <div class="Text">
+          <div class="label">
+            <div class="filllabel clickThree"></div>
+            <div class="filllabel clickFour"></div>
+            <div class="filllabel clickFive"></div>
+            <div class="filllabel clickSix"></div>
+          </div>
+          <h2 style="color: rgb(44, 43, 43); font-size: 40px">Musae—"缪斯"</h2>
+          <p
+            class="word"
+            style="
+              font-size: 60px;
+              color: rgb(55, 53, 53);
+              margin: 50px 0 0 120px;
+            "
+          >
+            ?-你的灵感源泉-!
+          </p>
+          <p
+            class="word"
+            style="
+              font-size: 56px;
+              color: rgb(55, 53, 53);
+              margin: 60px 0 0 280px;
+            "
+          >
+            音乐制作
+          </p>
+          <p
+            class="word"
+            style="
+              font-size: 60px;
+              color: rgb(55, 53, 53);
+              margin: 70px 0 0 340px;
+            "
+          >
+            电影、动画生成
+          </p>
+        </div>
+      </div>
+      <div class="box" style="background-color: transparent">
+        <p class="sta-word">、 用户增长</p>
+      </div>
+      <div class="end">
+        <h1>@Icecream</h1>
+        <!-- <h2>火花四见、拾月^</h2> -->
+        <h3>联系方式</h3>
+        <h4>WeChat: look-icecream</h4>
+        <h4>QQ: 2182276459</h4>
+        <h3>焦糖OpenJT</h3>
+        <h5>———2024年10月12日———</h5>
+      </div>
+    </div>
+    <script src="./pretty/openjt.js"></script>
+  </body>
+</html>

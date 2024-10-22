@@ -1,0 +1,736 @@
+@font-face {
+  font-family: 钟鸣;
+  src: url("./fonts/鼎猎珠海体-v1.00/dingliezhuhaifont+\(20240831更新版\).ttf");
+}
+@font-face {
+  font-family: 传说;
+  src: url("./fonts/ChillHuoKai_Regular.otf");
+}
+@font-face {
+  font-family: 古书;
+  src: url("./fonts/厚重古书.otf");
+}
+@font-face {
+  font-family: 白纸;
+  src: url("./fonts/白纸书.otf");
+  font-weight: lighter;
+}
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(34, 34, 34);
+  overflow-x: hidden;
+}
+/* 导航栏设置 */
+nav {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 45px;
+  line-height: 40px;
+  background-color: rgb(34, 34, 34, 0.8);
+  /* background-color: black; */
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 10;
+  /*修改导航栏微微偏右bug */
+  padding-right: 50px;
+}
+.a-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: lightcoral; */
+  /* width: 8%; */
+  width: 14%;
+  /* margin-right: 80px; */
+  margin-right: 0;
+  transition: background-color 0.8s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+.content {
+  display: none;
+  width: 100vw;
+  min-width: 1000px;
+  background-color: rgb(34, 34, 34, 0.8);
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  padding: 25px 30vw 10vh 8vw;
+  z-index: 10;
+  animation: fade 0.5s ease-in-out;
+  cursor: default;
+}
+.a-box:hover .content {
+  display: block;
+  opacity: 1;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scaley(0%);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaley(100%);
+    transform-origin: top;
+  }
+}
+.shit {
+  display: grid;
+  grid-template-columns: repeat(9, 120px);
+  grid-template-rows: repeat(5, 40px);
+}
+.shit p {
+  display: block;
+  grid-row-gap: 10px;
+}
+.content .span {
+  font-family: Arial;
+  font-size: 14.5px;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+.content .describe {
+  opacity: 0;
+  font-size: 17px;
+  grid-column: span 8;
+}
+.content .span:hover {
+  color: rgb(234, 115, 64);
+}
+.content .span:hover + .describe {
+  opacity: 1;
+  transition: opacity 0.8s linear;
+}
+.fun-table td {
+  width: 300px;
+  height: 30px;
+  cursor: pointer;
+}
+.fun-table td p:hover {
+  color: rgb(234, 115, 64);
+}
+.a-box p {
+  font-family: 钟鸣;
+  font-size: 18px;
+  line-height: 200%;
+  word-wrap: break-word;
+  transition: color 0.4s ease;
+}
+.a-box .jotang {
+  font-size: 12px;
+  font-family: Arial;
+  line-height: 250%;
+  text-indent: 2%;
+}
+#jotang {
+  width: 100%;
+  font-size: 15px;
+  font-family: 钟鸣;
+  text-align: left;
+  text-indent: 2%;
+  cursor: pointer;
+  transition: color 0.7s ease;
+}
+#jotang:hover {
+  color: rgb(234, 115, 64);
+}
+.blur {
+  display: inline;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  backdrop-filter: blur(20px);
+  display: none;
+  z-index: 2;
+}
+nav img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 5s linear;
+  z-index: 10;
+}
+nav img:hover {
+  /* filter: brightness(200%); */
+  /* 取消鼠标放置图片高亮效果 */
+  transform: rotate(540deg);
+}
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  /* font-size: calc(0.8vw); */
+  /* 取消设置导航栏字体大小随界面变化 */
+}
+.nav-a:before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 25px;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.5s linear;
+  z-index: 10;
+}
+.a-box:hover {
+  /* background-color: rgb(0, 0, 0, 0.5); */
+  /* 取消鼠标悬停标签阴影效果 */
+  a:before {
+    width: 100%;
+  }
+}
+/* .a-box:hover + .blur {
+  display: block;
+} */
+/* 取消触碰导航栏时页面虚化效果 */
+@media screen and (max-width: 650px) {
+  nav {
+    display: none;
+  }
+}
+/* 轮播图 */
+.shell {
+  position: relative;
+  top: 80px;
+  margin: 0% auto;
+  /* background-color: aliceblue; */
+  width: 50vw;
+  height: 90vh;
+  max-width: 1200px;
+  max-height: 600px;
+  /* perspective: 3000px; */
+  perspective: 1500px;
+  transform-origin: center;
+}
+.img-continer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: translateZ(-60vw) rotateY(0);
+  transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  /* animation: revole 25s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards; */
+}
+.photo {
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  max-width: 1200px;
+  max-height: 600px;
+  /* box-shadow: 0 5px 20px rgba(255, 254, 254, 0.3); */
+  box-shadow: 0px 8px 10px rgba(121, 114, 114, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+.photo:nth-child(1) {
+  background-image: url(./img/blue.jpg);
+  transform: rotateY(0) translateZ(60vw);
+}
+.photo:nth-child(2) {
+  background-image: url(./img/greeen.jpg);
+  transform: rotateY(90deg) translateZ(60vw);
+}
+.photo:nth-child(3) {
+  background-image: url(./img/eye\ of\ storm.png);
+  transform: rotateY(180deg) translateZ(60vw);
+}
+.photo:nth-child(4) {
+  background-image: url(./img/color.jpg);
+  transform: rotateY(270deg) translateZ(60vw);
+}
+
+/* @keyframes revole {
+  0%,
+  14% {
+    transform: translateZ(-60vw) rotateY(0);
+  }
+  21.5%,
+  35.5% {
+    transform: translateZ(-60vw) rotateY(-90deg);
+  }
+  43%,
+  57% {
+    transform: translateZ(-60vw) rotateY(-180deg);
+  }
+  64.5%,
+  78.5% {
+    transform: translateZ(-60vw) rotateY(-270deg);
+  }
+  86%,
+  100% {
+    transform: translateZ(-60vw) rotateY(-360deg);
+  }
+} */
+.photo:hover {
+  max-width: 1220px;
+  max-height: 610px;
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.3);
+}
+.button {
+  position: absolute;
+  top: 750px;
+  width: 100vw;
+  height: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.change {
+  width: 100px;
+  height: 100%;
+  border-radius: 8px;
+  /* background-color: rgba(245, 245, 245, 0.173); */
+  background-color: rgba(245, 245, 245, 0.571);
+  margin: 0 5px 0;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.change.white {
+  width: 60%;
+  border-radius: 0;
+  background-color: whitesmoke;
+  margin: -1px;
+  transition: all 0.8s ease;
+}
+.change:hover {
+  background-color: rgba(245, 245, 245, 0.883);
+  transition: all 0.8s ease;
+}
+/* 页面主体部分 */
+/* logo渐显 */
+.text-continer {
+  width: 100vw;
+  height: 200px;
+  position: absolute;
+  top: 800px;
+  display: flex;
+  justify-content: center;
+}
+.symbol {
+  font-size: 80px;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+.symbol.up {
+  color: whitesmoke;
+  opacity: 1;
+  text-shadow: 0px 3px 10px rgba(254, 254, 254, 0.6);
+  transition: all 1s ease;
+}
+/* 真正主体 */
+.main-continer {
+  position: absolute;
+  top: 980px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: whitesmoke;
+  width: 1480px;
+  height: 500px;
+  /* margin-top: 300px; */
+  /* margin-bottom: 40vh; */
+  margin-bottom: 600px;
+  border-radius: 15px;
+  opacity: 0;
+  /* box-shadow: 0px 3px 10px rgba(254, 254, 254, 0.6); */
+  transition: transform 0.5s ease, opacity 0.5s linear;
+  cursor: pointer;
+}
+.box:nth-child(odd) {
+  transform: translateX(100%);
+}
+/* .box .Text:nth-child(odd) {
+  transform: translateX(-100%);
+} */
+.box:nth-child(even) {
+  transform: translateX(-100%);
+}
+.box.center {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+/* 主体1焦糖介绍 */
+.box.jotang {
+  display: grid;
+  background-image: url(./img/蓝天和云.jpg);
+  background-size: cover;
+  width: 1180px;
+  height: 400px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* background: linear-gradient(rgb(249, 247, 247), rgb(246, 171, 110)); */
+  /* background-color: rgb(34, 34, 34, 0.8); */
+  gap: 5px;
+}
+.pre {
+  /* background-color: lightcoral; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pre.img {
+  grid-row: span 2;
+  align-items: baseline;
+}
+.pre.text-l,
+.pre.text-r {
+  grid-row: span 2;
+}
+.text-l p {
+  font-size: 25px;
+  font-family: 钟鸣;
+  color: rgb(34, 34, 34);
+  text-indent: 50px;
+  margin-left: 50px;
+}
+.pre.text {
+  grid-column: span 3;
+}
+.logo3 {
+  width: 170px;
+  height: auto;
+  margin-top: 25%;
+}
+.logo3.roll {
+  animation: roll 3s linear infinite forwards;
+}
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.Text {
+  line-height: 40px;
+  padding: 20px 30px 0;
+  grid-column: span 2;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.Text:nth-child(odd) {
+  transform: translateX(-100%);
+}
+.Text:nth-child(even) {
+  transform: translateX(100%);
+}
+.Text.fade {
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+.label {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 25px;
+  /* background-color: lightcoral; */
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.filllabel {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  /* border: 2.5px solid rgb(67, 65, 65); */
+  border: 3px solid rgba(224, 218, 211, 0.44);
+  background-color: rgba(201, 192, 184, 0.227);
+  box-shadow: 0, 2px, 3px, rgba(253, 252, 252, 0.797);
+  margin-right: 4px;
+  transition: all 0.4s ease;
+}
+.Text h2 {
+  font-family: 古书;
+  font-size: 28px;
+  color: rgb(34, 34, 34);
+}
+.Text p {
+  font-family: 传说;
+  font-size: 18px;
+  color: rgb(87, 86, 86);
+}
+.Text .word {
+  text-indent: 32px;
+  font-family: 古书;
+  font-size: 25px;
+  color: rgb(34, 34, 34);
+}
+.float {
+  border-radius: 15px;
+  background-size: cover;
+  box-shadow: 0px 7px 15px rgba(254, 254, 254, 0.6);
+}
+/* 他方真我 */
+.Anotherme {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(34, 34, 34);
+}
+.Anotherme .Text {
+  /* background-color: whitesmoke; */
+  background: linear-gradient(70deg, rgb(72, 143, 224), rgb(244, 157, 173));
+  margin: 30px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .filllabel:nth-child(1) {
+    background-color: rgba(60, 46, 186, 0.751);
+  }
+  .filllabel {
+    border: 3px solid rgba(224, 218, 211, 0.166);
+    background-color: rgba(201, 192, 184, 0.056);
+  }
+}
+.Anotherme .float {
+  position: absolute;
+  right: 0;
+  width: 450px;
+  height: 540px;
+  background-image: url(./img/真我.jpg);
+  box-shadow: 0px 3px 15px rgba(77, 76, 76, 0.582);
+}
+.h {
+  margin-bottom: 50px;
+}
+.h.one {
+  font-size: 70px;
+  color: aliceblue;
+}
+.h.two {
+  font-family: 传说;
+  font-size: 40px;
+  color: aliceblue;
+}
+.Anotherme .word {
+  font-family: 古书;
+  font-size: 50px;
+  position: absolute;
+}
+.word.one {
+  top: 50px;
+  left: 40px;
+  color: rgb(159, 234, 255);
+}
+.word.two {
+  bottom: 60px;
+  right: 60px;
+  color: rgb(244, 231, 139);
+}
+/* 齐白石 */
+.Qibaishi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(34, 34, 34);
+  height: 600px;
+}
+.Qibaishi .Text {
+  /* background-color: rgb(220, 226, 208); */
+  background-color: rgb(223, 228, 212);
+  /* background: linear-gradient(to right, whitesmoke, rgb(168, 195, 135)); */
+  margin: 30px 0px 30px 80px;
+  .filllabel:nth-child(2) {
+    background-color: rgb(109, 174, 109);
+  }
+}
+.Qibaishi .Text .word {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+.Qibaishi .float {
+  background-image: url(./img/齐白石画作.jpg);
+}
+/* 上帝之译 */
+.Godedit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(34, 34, 34);
+  height: 600px;
+}
+.Godedit .Text {
+  background-color: rgb(237, 227, 203);
+  /* background: linear-gradient(rgb(186, 169, 131), rgb(199, 145, 145)); */
+  margin: 30px 80px 30px 0px;
+  img {
+    width: 100%;
+    height: 180px;
+    margin: 10px 0;
+  }
+  .filllabel:nth-child(3) {
+    background-color: rgb(227, 43, 45);
+  }
+}
+.Godedit .float {
+  background-image: url(./img/monster.jpg);
+  box-shadow: 0px 3px 15px rgba(243, 97, 97, 0.6);
+}
+/* 缪斯 */
+.Musae {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(34, 34, 34);
+  height: 600px;
+}
+.Musae .Text {
+  background-color: rgba(116, 114, 114, 0.212);
+  background-image: url(./img/colorful.jpg);
+  background-size: cover;
+  margin: 30px 0 30px 80px;
+  .filllabel:nth-child(4) {
+    background-color: rgba(74, 193, 245, 0.743);
+  }
+}
+.Musae .float {
+  background-image: url(./img/花卉.jpg);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.846);
+}
+/*补充：按钮鼠标悬停 */
+.filllabel:nth-child(1):hover {
+  background-color: rgba(60, 46, 186, 0.751);
+}
+.filllabel:nth-child(2):hover {
+  background-color: rgb(109, 174, 109);
+}
+.filllabel:nth-child(3):hover {
+  background-color: rgb(227, 43, 45);
+}
+.filllabel:nth-child(4):hover {
+  background-color: rgba(74, 193, 245, 0.743);
+}
+/* 柱状图 */
+.statistics {
+  background-color: transparent;
+  /* background-color: rgb(105, 178, 238); */
+  width: 1480px;
+  height: 700px;
+  display: flex;
+  position: absolute;
+  top: 6500px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.list {
+  width: 900px;
+  height: 500px;
+  padding: 0 60px 0;
+  background-color: rgb(34, 34, 34, 0.8);
+  /* background-color: lightcoral; */
+  margin: 60px 0 0 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.fill-list {
+  width: 50px;
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  transition: all 1s ease;
+}
+.fill {
+  width: 92%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.fill-list.up {
+  height: 500px;
+  transition: all 1s ease;
+  overflow: visible;
+}
+.fill-list p {
+  margin-bottom: 7px;
+  font-family: 白纸;
+  font-weight: lighter;
+  font-size: 20px;
+  color: whitesmoke;
+  font-size: 20px;
+}
+.fill-list h3 {
+  margin-top: 5px;
+  font-family: 白纸;
+  font-weight: lighter;
+  font-size: 25px;
+  color: whitesmoke;
+}
+.sta-word {
+  font-family: 古书;
+  color: white;
+  width: 60px;
+  font-size: 70px;
+  margin: -40px 0 0 1150px;
+}
+/* 结尾 */
+.end {
+  margin-top: 15vh;
+  background-color: rgba(245, 245, 245, 0.894);
+  background-image: url(./img/海鸥.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 400px;
+  /* height: 800px; */
+  padding: 18px 0 0 50px;
+}
+.end h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+}
+/* .end h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+} */
+.end h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+}
+.end h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+}
+.end h5 {
+  font-size: 16px;
+  margin-top: 20px;
+  color: whitesmoke;
+}
